@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <h1>Jobs List</h1>
+    <p>Welcome to Jobs <%= console.log(joblist) %></p>
+    <p><table border="1" cellpadding="7" cellspacing="7">
+      <tr>
+        <th width="50px">No</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Active</th>
+      </tr>
+      <% if(joblist.meta.total){ 
+        for(var i = 0;i < joblist.data.length;i++) { %>
+      <tr>
+        <td><%=(i+1)%></td>
+        <td><%=joblist.data[i].jt_type_id%></td>
+        <td><%=joblist.data[i].jt_name%></td>
+        <td><%=joblist.data[i].jt_active%></td>
+      </tr>
+      <% }
+      }else{ %>
+      <tr>
+        <td colspan="3">No user</td>
+      </tr>
+    <% } %>
+    </table></p>
+  </body>
+</html>

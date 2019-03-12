@@ -7,7 +7,6 @@ var constant = require('./config/constants');
 
 
 var port = process.env.PORT || 8042;
-var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 var path = require('path');
@@ -25,10 +24,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 /***************Mongodb configuratrion********************/
-var mongoose = require('mongoose');
-var configDB = require('./config/database.js');
+//var mysql      = require('mysql');
+//var configDB = require('./config/database.js');
 //configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+//mongoose.connect(configDB.url); // connect to our database
 
 
 require('./config/passport')(passport); // pass passport for configuration
@@ -61,6 +60,13 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // routes ======================================================================
 require('./config/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
+// dynamically include routes (Controller)
+// fs.readdirSync('./controllers').forEach(function (file) {
+//     if(file.substr(-3) == '.js') {
+//         route = require('./controllers/' + file);
+//         route.controller(app);
+//     }
+//   });
 
 //launch ======================================================================
 app.listen(port);

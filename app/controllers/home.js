@@ -8,9 +8,10 @@ exports.loggedIn = function(req, res, next)
 
 		next();
 
-	} else {
+	} 
+	else {
 
-		res.redirect('/login');
+		res.redirect('/job-salary-list');
 
 	}
 

@@ -1,4 +1,5 @@
 var home = require('../app/controllers/home');
+var jobs = require('../app/controllers/jobs');
 
 //you can include all your controllers
 
@@ -21,6 +22,13 @@ module.exports = function (app, passport) {
         failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
+
+    //job
+    app.get('/job-salary-list', jobs.jobSalaryList);
+    // app.route('/job-salary-list')
+    // .get(jobs.jobSalaryList);
+    //app.use('/job-salary-list', require('./controllers/jobs'));//job salary list
+
 
 
 }
