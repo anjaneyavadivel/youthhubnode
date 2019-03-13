@@ -25,6 +25,11 @@ module.exports = function (app, passport) {
 
     //job
     app.get('/job-salary-list', jobs.jobSalaryList);
+    // app.get('/job-add', jobs.addJobSalary);
+    // app.post('/job-add', jobs.saveJobSalary);
+    // app.get('/job-edit/:id', jobs.editJobSalary);
+    // app.post('/job-edit/:id', jobs.updateJobSalary);
+    // app.get('/job-delete/:id', jobs.deleteJobSalary);
     // app.route('/job-salary-list')
     // .get(jobs.jobSalaryList);
     //app.use('/job-salary-list', require('./controllers/jobs'));//job salary list

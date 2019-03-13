@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <h1>Jobs List</h1>
+    <p>Welcome to Jobs</p>
+    <p><a href="/job-add" rel="noopener" class="btn btn-sm btn-success">Add</a></p>
+    <p><table border="1" cellpadding="7" cellspacing="7">
+      <tr>
+        <th width="50px">ID</th>
+        <th>Name</th>
+        <th>Active</th>
+        <th>Action</th>
+      </tr>
+      <% if(joblist.meta.total){ 
+         joblist.data.forEach((joblist, index) => { %>
+      <tr>
+        <td><%=joblist.jt_type_id%></td>
+        <td><%=joblist.jt_name%></td>
+        <td><%=joblist.jt_active%></td>
+        <td>
+          <a href="/job-edit/<%= joblist.jt_type_id %>" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+          <a href="/job-delete/<%= joblist.jt_type_id %>" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+      </tr>
+      <% })
+      }else{ %>
+      <tr>
+        <td colspan="4">No user</td>
+      </tr>
+    <% } %>
+    </table></p>
+  </body>
+</html>

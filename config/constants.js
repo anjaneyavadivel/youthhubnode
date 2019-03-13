@@ -9,4 +9,5 @@ module.exports = {
 	"smtp_from_name":"youthhub-node",
 	"alert_email":"aler@email.com",
 	"alert_email_name":"Aler Name",
+	"secret":"addg$#fffh67885Swe!2&8*"
 };

@@ -1,7 +1,7 @@
 var mysql = require('mysql');
     port = process.env.PORT || 4205;
 
-//if (port === 4205) {
+if (port === 4205) {
 
     var connection = mysql.createConnection({
         host: "localhost",
@@ -9,7 +9,7 @@ var mysql = require('mysql');
         password: "",
         database: "hub"
       });
-//} else {
+}
 
    //same as above, with live server details
 connection.connect();
