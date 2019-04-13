@@ -8,16 +8,17 @@ var constant = require('./config/constants');
 
 var port = process.env.PORT || 8042;
 var passport = require('passport');
+var jwtToken = require('jsonwebtoken');
 var flash = require('connect-flash');
 var path = require('path');
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+//var session = require('express-session');
 var bodyParser = require('body-parser');
-var dateFormat = require('dateformat');
-var now = new Date();
+//var dateFormat = require('dateformat');
+//var now = new Date();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -47,11 +48,11 @@ app.set('view engine', 'ejs');
 //required for passport
 //app.use(session({ secret: 'iloveyoudear...' })); // session secret
 
-app.use(session({
-    secret: 'I Love India...',
-    resave: true,
-    saveUninitialized: true
-}));
+// app.use(session({
+//     secret: 'I Love India...',
+//     resave: true,
+//     saveUninitialized: true
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
